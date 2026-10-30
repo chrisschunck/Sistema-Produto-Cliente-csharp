@@ -23,19 +23,9 @@ Sistema de gerenciamento de **Produtos** e **Clientes** desenvolvido em **C# (.N
 
 ## Funcionalidades
 
-**Produto**
-- Adicionar produto
-- Atualizar produto por ID
-- Deletar produto por ID
-- Consultar produto por ID
-- Listar todos os produtos
+**CRUD de Produto**
 
-**Cliente**
-- Adicionar cliente
-- Atualizar cliente por ID
-- Deletar cliente por ID
-- Consultar cliente por ID
-- Listar todos os clientes
+**CRUD de Cliente*
 
 A interação atual acontece por **menu no console** (`Program.cs`). Os **controllers REST** já estão implementados na camada de adapters (veja [Estado atual e limitações](#estado-atual-e-limitações)).
 
