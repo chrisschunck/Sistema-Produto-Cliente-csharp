@@ -1,6 +1,6 @@
 # Sistema Produto & Cliente (C#)
 
-Sistema de gerenciamento de **Produtos** e **Clientes** desenvolvido em **C# (.NET 10)**, com CRUD completo para as duas entidades e organização em camadas inspirada na **arquitetura hexagonal** (ports and adapters). Projeto desenvolvido com o objetivo de aprendizagem em linguagem C# e ASP.NET, colocando em prática conhecimentos em linguagem de POO(Programação Orientada a Objetos).
+Sistema de gerenciamento de **Produtos** e **Clientes** desenvolvido em **C# (.NET 10)**, com CRUD completo para as duas entidades e organização em camadas inspirada na **arquitetura hexagonal** (ports and adapters). Projeto desenvolvido com o objetivo de aprendizagem em linguagem C# e ASP.NET, colocando em prática conhecimentos em linguagem de POO (Programação Orientada a Objetos).
 
 ---
 
