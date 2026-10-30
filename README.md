@@ -254,8 +254,7 @@ Pontos conhecidos que fazem parte da evolução do projeto:
 
 ## Autor
 
-**Christian**
-Estudante de Engenharia de Software, FIAP
+**Christian Schunck de Almeida**
 
 ---
 
