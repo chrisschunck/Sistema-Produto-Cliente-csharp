@@ -25,7 +25,7 @@ Sistema de gerenciamento de **Produtos** e **Clientes** desenvolvido em **C# (.N
 
 **CRUD de Produto**
 
-**CRUD de Cliente*
+**CRUD de Cliente**
 
 A interação atual acontece por **menu no console** (`Program.cs`). Os **controllers REST** já estão implementados na camada de adapters (veja [Estado atual e limitações](#estado-atual-e-limitações)).
 
