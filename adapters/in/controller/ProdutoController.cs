@@ -12,6 +12,7 @@ public class ProdutoController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles="admin")]
     public ActionResult<Produto> AdicionarProduto(ProdutoRequestDTO produto)
     {
         var novoProduto = new Produto
