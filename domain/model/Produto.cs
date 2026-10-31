@@ -27,18 +27,23 @@ public class Produto
     public Produto() { }
 
     [Required]
+    [JsonProperty]
     [DisplayName("ID")]
     public long id { get; set; } = 0;
     [Required]
+    [JsonProperty]
     [DisplayName("Nome")]
     public string nome { get; set; } = string.Empty;
     [Required]
+    [JsonProperty]
     [DisplayName("Descrição")]
     public string descricao { get; set; } = string.Empty;
     [Required]
+    [JsonProperty]
     [DisplayName("Preço")]
     public decimal preco { get; set; } = 0.0m;
     [DisplayName("Quantidade")]
+    [JsonProperty]
     [Required]
     public int quantidade { get; set; } = 0;
 }
