@@ -2,8 +2,9 @@ using Microsoft.EntityFrameworkCore;
 
 public class AppDbContext : DbContext 
 {
-    public DbSet<Categoria> Categorias { get; set; }
-
+    public DbSet<Cliente> Cliente { get; set; }
+    public DbSet<Produto> Produto { get; set; }
+    
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // String de conexão com o SQL Server
