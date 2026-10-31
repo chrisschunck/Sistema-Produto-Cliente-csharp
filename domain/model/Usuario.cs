@@ -1,9 +1,9 @@
 public class Usuario {
-  private long id;
-  private string nome;
-  private int anoNascimento;
-  private string contato;
-  private Roles roles;
+  private long _id;
+  private string _nome;
+  private int _anoNascimento;
+  private string _contato;
+  private Roles _roles;
 
   public Usuario(long id, string nome, int anoNascimento, string contato, Roles roles) {
     _id = id;
