@@ -7,7 +7,7 @@ public class AppDbContext : DbContext
 
     public DbContext () {}
 
-    public DbContext(DbContextOptions<AppDbContext> options) : base(options) {}
+    public DbContext(DbContextOptions<DbContext> options) : base(options) {}
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
