@@ -1,17 +1,23 @@
-﻿public class ProdutoRepository
+using System
+using domain.model
+using context
+
+public class ProdutoRepository
 {
-    private readonly List<Produto> _produtos;
+    private readonly DbContext _dbContext;
+    
     public ProdutoRepository()
     {
-        _produtos = new List<Produto>();
+        _dbContext = dbcontext;
     }
     public void AdicionarProduto(Produto produto)
     {
-        _produtos.Add(produto);
+        _dbContext.Add(produto);
+        _dbContext.SaveChanges();
     }
     public void AtualizarProdutoPorId(Produto produto)
     {
-        var produtoExistente = _produtos.FirstOrDefault(p => p.id == produto.id);
+        var produtoExistente = _dbContext.Produto.Find(id));
         if (produtoExistente != null)
         {
             produtoExistente.nome = produto.nome;
@@ -19,21 +25,24 @@
             produtoExistente.preco = produto.preco;
             produtoExistente.quantidade = produto.quantidade;
         }
+        _dbContext.Produto.Update(produtoExistente);
+        _dbContext.SaveChanges();
     }
     public void DeletarProdutoPorId(long id)
     {
-        var produto = _produtos.FirstOrDefault(p => p.id == id);
+        var produto = _dbContext.Produto.Find(id);
         if (produto != null)
         {
-            _produtos.Remove(produto);
+            _dbContext.Remove(produto);
         }
+        _dbContext.SaveChanges();
     }
     public Produto ObterProdutoPorId(long id)
     {
-        return _produtos.FirstOrDefault(p => p.id == id);
+        return _dbContext.Produto.Find(id);
     }
     public IEnumerable<Produto> ObterTodosProdutos()
     {
-        return _produtos;
+        return _dbContext;
     }
 }
