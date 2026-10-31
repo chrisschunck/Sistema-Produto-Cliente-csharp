@@ -10,6 +10,7 @@ public class Program
     {
         while (true)
         {
+            try {
             Console.WriteLine("===== Menu principal =====");
             Console.WriteLine("1. Menu Produto");
             Console.WriteLine("2. Menu Cliente");
@@ -30,11 +31,23 @@ public class Program
                     Console.WriteLine("Opção inválida.");
                     break;
             }
+            }
+            catch (ArgumentNullException exception) {
+                Console.WriteLine("Não pode ser nulo");
+            }
+            catch (Exception exception) {
+                Console.WriteLine("Erro inesperado!, {exception.Message}");
+            }
+            finally {
+                Console.WriteLine("Seção finalizada!");
+            }
         }
     }
 
     private static void MostrarMenuProduto()
     {
+
+        try {
         Console.WriteLine("===== Menu Produto =====");
         Console.WriteLine("1. Adicionar Produto");
         Console.WriteLine("2. Atualizar Produto");
@@ -66,10 +79,21 @@ public class Program
                     break;
             }
         }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine("Erro inesperado!");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado!");
+        }
+        }
         
 
     private static void MostrarMenuCliente()
     {
+        try {   
         Console.WriteLine("===== Menu Cliente =====");
         Console.WriteLine("1. Adicionar Cliente");
         Console.WriteLine("2. Atualizar Cliente");
@@ -77,6 +101,7 @@ public class Program
         Console.WriteLine("4. Obter Cliente por ID");
         Console.WriteLine("5. Obter Todos os Clientes");
         Console.Write("Escolha uma opção: ");
+
 
         switch (Console.ReadLine())
         {
@@ -99,6 +124,16 @@ public class Program
                 Console.WriteLine("Opção inválida.");
                 break;
         }
+        }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine("Erro inesperado!");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
     }
 
     private static void AdicionarProduto()
@@ -118,6 +153,7 @@ public class Program
 
     private static void AtualizarProduto()
     {
+       try {
         var produto = new Produto
         {
             id = LerLong("ID do Produto: "),
@@ -130,15 +166,36 @@ public class Program
         ProdutoService.AtualizarProdutoPorId(produto);
         Console.WriteLine("Produto atualizado com sucesso!");
     }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+        Console.WriteLine($"Erro inesperado!, {exception.Message}");
+    }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
+    }
 
     private static void DeletarProduto()
     {
+        try {
         ProdutoService.DeletarProdutoPorId(LerLong("ID do Produto: "));
         Console.WriteLine("Produto deletado com sucesso!");
     }
-
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+         catch (Exception exception) {
+        Console.WriteLine($"Erro inesperado!, {exception.Message}");
+    }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
+    }
     private static void ObterProdutoPorId()
     {
+        try {
         var produto = ProdutoService.ObterProdutoPorId(LerLong("ID do Produto: "));
         if (produto is null)
         {
@@ -148,17 +205,39 @@ public class Program
 
         Console.WriteLine($"ID: {produto.id}, Nome: {produto.nome}, Descrição: {produto.descricao}, Preço: {produto.preco}, Quantidade: {produto.quantidade}");
     }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine($"Erro inesperado!, {exception.Message}");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
+    }
 
     private static void ObterTodosOsProdutos()
     {
+        try {
         foreach (var produto in ProdutoService.ObterTodosProdutos())
         {
             Console.WriteLine($"ID: {produto.id}, Nome: {produto.nome}, Descrição: {produto.descricao}, Preço: {produto.preco}, Quantidade: {produto.quantidade}");
         }
     }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine($"Erro inesperado!, {exception.Message}");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
+    }
 
     private static void AdicionarCliente()
     {
+        try {
         var cliente = new Cliente
         {
             id = LerLong("ID: "),
@@ -172,9 +251,20 @@ public class Program
         ClienteService.AdicionarCliente(cliente);
         Console.WriteLine("Cliente adicionado com sucesso!");
     }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine($"Erro inesperado!, {exception.Message}");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
+    }
 
     private static void AtualizarCliente()
     {
+        try {
         var cliente = new Cliente
         {
             id = LerLong("ID do Cliente: "),
@@ -188,15 +278,37 @@ public class Program
         ClienteService.AtualizarClientePorId(cliente);
         Console.WriteLine("Cliente atualizado com sucesso!");
     }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine($"Erro inesperado!, {exception.Message}");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
+    }
 
     private static void DeletarCliente()
     {
+        try {
         ClienteService.DeletarClientePorId(LerLong("ID do Cliente: "));
         Console.WriteLine("Cliente deletado com sucesso!");
+    }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine($"Erro inesperado, {exception.Message}");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
     }
 
     private static void ObterClientePorId()
     {
+        try {
         var cliente = ClienteService.ObterClientePorId(LerLong("ID do Cliente: "));
         if (cliente is null)
         {
@@ -206,19 +318,50 @@ public class Program
 
         Console.WriteLine($"ID: {cliente.id}, Nome: {cliente.Nome}, Email: {cliente.Email}, Telefone: {cliente.Telefone}, Endereço: {cliente.Endereco}, CPF: {cliente.Cpf}");
     }
-
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine($"Erro inesperado, {exception.Message}");
+        }
+        finally {
+            Consolw.WriteLine("Bloco finalizado");
+        }
+    }
     private static void ObterTodosOsClientes()
     {
+        try {
         foreach (var cliente in ClienteService.ObterTodosClientes())
         {
             Console.WriteLine($"ID: {cliente.id}, Nome: {cliente.Nome}, Email: {cliente.Email}, Telefone: {cliente.Telefone}, Endereço: {cliente.Endereco}, CPF: {cliente.Cpf}");
         }
     }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine($"Erro inesperado, {exception.Message}");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
+    }
 
     private static string LerTexto(string mensagem)
     {
+        try {
         Console.Write(mensagem);
         return Console.ReadLine() ?? string.Empty;
+    }
+        catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine($"Erro inesperado, {exception.Message}");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado");
+        }
     }
 
     private static long LerLong(string mensagem)
@@ -227,8 +370,17 @@ public class Program
         {
             if (long.TryParse(LerTexto(mensagem), out var valor))
                 return valor;
-
+            try {
             Console.WriteLine("Digite um número inteiro válido.");
+        }
+            catch (ArgumentNullException exception) {
+            Console.WriteLine("Não pode ser nulo");
+        }
+        catch (Exception exception) {
+            Console.WriteLine($"Erro inesperado, {exception.Message}");
+        }
+        finally {
+            Console.WriteLine("Bloco finalizado");
         }
     }
 
@@ -238,8 +390,18 @@ public class Program
         {
             if (int.TryParse(LerTexto(mensagem), out var valor))
                 return valor;
-
+            try {
             Console.WriteLine("Digite um número inteiro válido.");
+        }
+            catch (ArgumentNullException exception) {
+                Console.WriteLine("Não pode ser nulo");
+            }
+            catch (Exception exception) {
+                Console.WriteLine($"Erro inesperado, {exception.Message}");
+            }
+            finally {
+                Console.WriteLine("Bloco finalizado");
+            }
         }
     }
 
@@ -249,8 +411,18 @@ public class Program
         {
             if (decimal.TryParse(LerTexto(mensagem), out var valor))
                 return valor;
-
+            try {
             Console.WriteLine("Digite um valor decimal válido.");
+        }
+            catch (ArgumentNullException exception) {
+                Console.WriteLine("Não pode ser nulo");
+            }
+            catch (Exception exception) {
+                Console.WriteLine($"Erro inesperado, {exception.Message}");
+            }
+            finally {
+                Console.WriteLine("Bloco finalizado");
+            }
         }
     }
 }
