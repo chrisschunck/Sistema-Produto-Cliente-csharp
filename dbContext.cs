@@ -4,6 +4,10 @@ public class AppDbContext : DbContext
 {
     public DbSet<Cliente> Cliente { get; set; }
     public DbSet<Produto> Produto { get; set; }
+
+    public DbContrext () {}
+
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
