@@ -1,7 +1,7 @@
 public interface IClienteRepository {
-  void AdicionarCliente(ClienteRequestDTO cliente);
-  void ObterClientePorId (long id)
+  void AdicionarCliente(Cliente cliente);
+  Cliente ObterClientePorId (long id)
   IEnumerable<Cliente> ObterTodosClientes();
-  void AtualizarClientePorId(ClienteDTO cliente, long id);
+  void AtualizarClientePorId(Cliente cliente, long id);
   void DeletarClientePorID(long id)
 }
