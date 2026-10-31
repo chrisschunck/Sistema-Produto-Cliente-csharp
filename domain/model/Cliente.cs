@@ -30,20 +30,26 @@ public class Cliente {
     public Cliente() {}
 
     [Required]
+    [JsonProperty]
     [DisplayName("ID")]
     public long id { get; set; } = 0;
     [Required]
+    [JsonProperty]
     [DisplayName("Nome")]
     public string Nome { get; set; } = string.Empty;
     [Required]
+    [JsonProperty]
     [DisplayName("Email")]
     public string Email { get; set; } = string.Empty;
+    [JsonProperty]
     [DisplayName("Telefone")]
     [Required]
     public string Telefone { get; set; } = string.Empty;
+    [JsonProperty]
     [DisplayName("Endereco")]
     [Required]
     public string Endereco { get; set; } = string.Empty;
+    [JsonProperty]
     [DisplayName("CPF")]
     [Required]
     public string Cpf {get; set; } = string.Empty;
