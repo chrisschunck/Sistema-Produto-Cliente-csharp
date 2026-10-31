@@ -1,1 +1,7 @@
-
+public interface IProdutoRepository {
+  void AdicionarProduto(Produto produto);
+  Produto ObterProdutoPorId(long id);
+  void AtualizarProdutoPorId(Produto produto, long id);
+  void DeletarProdutoPorId(long id);
+  IEnumerable<Produto> ObterTodosProdutos();
+}
