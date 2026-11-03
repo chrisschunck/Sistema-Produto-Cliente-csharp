@@ -12,7 +12,7 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Cliente> AdicionarCliente(ClienteRequestDTO cliente)
+    public ActionResult<Cliente> AdicionarCliente(ClienteResponseDTO cliente)
     {
         var novoCliente = new Cliente
         {
@@ -28,7 +28,7 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPut("{id:long}")]
-    public IActionResult AtualizarClientePorId(long id, ClienteRequestDTO cliente)
+    public IActionResult AtualizarClientePorId(long id, ClienteReponseDTO cliente)
     {
         var clienteAtualizado = new Cliente
         {
