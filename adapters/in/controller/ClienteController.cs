@@ -12,7 +12,7 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Cliente> AdicionarCliente([Validate], ClienteResponseDTO cliente)
+    public ActionResult<ClienteResponseDTO> AdicionarCliente([Validate], ClienteRequestDTO cliente)
     {
         var novoCliente = new Cliente
         {
@@ -28,7 +28,7 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPut("{id:long}")]
-    public IActionResult AtualizarClientePorId([Validate], long id, ClienteReponseDTO cliente)
+    public ClienteResponseDTO AtualizarClientePorId([Validate], long id, ClienteRequestDTO cliente)
     {
         var clienteAtualizado = new Cliente
         {
@@ -45,21 +45,21 @@ public class ClienteController : ControllerBase
     }
 
     [HttpDelete("{id:long}")]
-    public IActionResult DeletarClientePorId(long id)
+    public void DeletarClientePorId(long id)
     {
         _clienteService.DeletarClientePorId(id);
         return NoContent();
     }
 
     [HttpGet("{id:long}")]
-    public ActionResult<Cliente> ObterClientePorId(long id)
+    public ActionResult<ClienteResponseDTO> ObterClientePorId(long id)
     {
         var cliente = _clienteService.ObterClientePorId(id);
         return cliente is null ? NotFound() : Ok(cliente);
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Cliente>> ObterTodosClientes()
+    public ActionResult<IEnumerable<ClienteResponseDTO>> ObterTodosClientes()
     {
         return Ok(_clienteService.ObterTodosClientes());
     }
