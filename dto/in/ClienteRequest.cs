@@ -8,6 +8,7 @@ public class ClienteRequestDTO
     [Required]
     [EmailAddress]
     [MaxLength(100), MinLength(5)]
+    [unique]
     public string Email { get; set; }
     [Required]
     [Phone]
