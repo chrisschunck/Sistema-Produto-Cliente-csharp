@@ -29,6 +29,7 @@ public class Cliente {
 
     public Cliente() {}
 
+    [Key]
     [Required]
     [JsonProperty]
     [DisplayName("ID")]
