@@ -13,7 +13,7 @@ public class ProdutoController : ControllerBase
 
     [HttpPost]
     [Authorize(Roles="admin")]
-    public ActionResult<Produto> AdicionarProduto(ProdutoRequestDTO produto)
+    public ActionResult<Produto> AdicionarProduto([Validate], ProdutoRequestDTO produto)
     {
         var novoProduto = new Produto
         {
@@ -28,7 +28,7 @@ public class ProdutoController : ControllerBase
     }
 
     [HttpPut("{id:long}")]
-    public IActionResult AtualizarProdutoPorId(long id, ProdutoRequestDTO produto)
+    public IActionResult AtualizarProdutoPorId([Validate], long id, ProdutoRequestDTO produto)
     {
         var produtoAtualizado = new Produto
         {
