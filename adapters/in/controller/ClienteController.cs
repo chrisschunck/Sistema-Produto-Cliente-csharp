@@ -12,7 +12,7 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPost]
-    public ActionResult<Cliente> AdicionarCliente(ClienteResponseDTO cliente)
+    public ActionResult<Cliente> AdicionarCliente(@Validate, ClienteResponseDTO cliente)
     {
         var novoCliente = new Cliente
         {
