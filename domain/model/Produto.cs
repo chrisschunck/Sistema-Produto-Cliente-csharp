@@ -26,6 +26,7 @@ public class Produto
     }
     public Produto() { }
 
+    [Key]
     [Required]
     [JsonProperty]
     [DisplayName("ID")]
