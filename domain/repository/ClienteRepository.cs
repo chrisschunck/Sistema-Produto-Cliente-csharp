@@ -9,7 +9,7 @@ public class ClienteRepository
     {
         _dbContext = dbcontext;
     }
-    public void Adicionar(Cliente cliente)
+    public void AdicionarCliente(Cliente cliente)
     {
         _dbContext.Add(cliente);
         _dbContext.SaveChanges();
