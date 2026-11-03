@@ -27,24 +27,23 @@ public class Produto
     public Produto() { }
 
     [KeyColumn("Chave primária, usada como identificador principal")]
-    [Required]
+    [Required(ErrorMessage = "Id é obrigatório")]
     [JsonProperty]
     [DisplayName("ID")]
     public long id { get; set; } = 0;
-    [Required]
+    [Required(ErrorMessage = "Nome é obrigatório")]
     [JsonProperty]
     [DisplayName("Nome")]
     public string nome { get; set; } = string.Empty;
-    [Required]
     [JsonProperty]
     [DisplayName("Descrição")]
     public string descricao { get; set; } = string.Empty;
-    [Required]
+    [Required(ErrorMessage = "Preço é obrigatório")]
     [JsonProperty]
     [DisplayName("Preço")]
     public decimal preco { get; set; } = 0.0m;
     [DisplayName("Quantidade")]
     [JsonProperty]
-    [Required]
+    [Required(ErrorMessage = "Quantidade é obrigatório")]
     public int quantidade { get; set; } = 0;
 }
