@@ -26,7 +26,7 @@ public class Produto
     }
     public Produto() { }
 
-    [KeyColumn = "Chave primária, usada como identificador principal"]
+    [KeyColumn("Chave primária, usada como identificador principal")]
     [Required]
     [JsonProperty]
     [DisplayName("ID")]
