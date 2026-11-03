@@ -8,7 +8,7 @@ public class ClienteRequestDTO
     [Required]
     [EmailAddress]
     [MaxLength(100), MinLength(5)]
-    [unique]
+    [Unique]
     public string Email { get; set; }
     [Required]
     [Phone]
@@ -18,6 +18,7 @@ public class ClienteRequestDTO
     [MaxLength(200), MinLength(10)]
     public string Endereco { get; set; }
     [Required]
+    [Unique]
     [MaxLength(14), MinLength(14)]
     public string Cpf { get; set; }
 }
