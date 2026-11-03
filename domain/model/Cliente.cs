@@ -12,16 +12,19 @@ public class Cliente {
     private string nome;
     [Column("email")]
     private string email;
+    [Column("senha")]
+    private string senha;
     [Column("telefone")]
     private string telefone;
     [Column("endereco")]
     private string endereco;
     [Column("cpf")]
     private string cpf;
-    public Cliente(long id, string nome, string email, string telefone, string endereco, string cpf) {
+    public Cliente(long id, string nome, string email, string senha, string telefone, string endereco, string cpf) {
         id = id;
         nome =  nome;
         email = email;
+        senha = senha;
         telefone = telefone;
         endereco = endereco;
         cpf = cpf;
@@ -37,19 +40,23 @@ public class Cliente {
     [Required(ErrorMessage = "Nome é obrigatório")]
     [JsonProperty]
     [DisplayName("Nome")]
-    public string Nome { get; set; } = string.Empty;
+    public string Nome { get; set; } = string.isEmpty;
     [Required(ErrorMessage = "Email é obrigatório")]
     [JsonProperty]
     [DisplayName("Email")]
-    public string Email { get; set; } = string.Empty;
+    public string Email { get; set; } = string.isEmpty;
+    [Required(ErrorMessage = "Senha é obrigatório")]
+    [JsonProperty]
+    [DisplayName("Senha")]
+    public string Senha { get; set; } = string.isEmpty;
     [JsonProperty]
     [DisplayName("Telefone")]
     [Required(ErrorMessage = "Telefone é obrigatório")]
-    public string Telefone { get; set; } = string.Empty;
+    public string Telefone { get; set; } = string.isEmpty;
     [JsonProperty]
     [DisplayName("Endereco")]
     [Required(ErrorMessage = "Endereço é obrigatório")]
-    public string Endereco { get; set; } = string.Empty;
+    public string Endereco { get; set; } = string.isEmpty;
     [JsonProperty]
     [DisplayName("CPF")]
     [Required(ErrorMessage = "Cpf é obrigatório")]
