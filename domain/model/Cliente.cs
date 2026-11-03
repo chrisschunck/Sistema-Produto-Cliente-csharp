@@ -29,7 +29,7 @@ public class Cliente {
 
     public Cliente() {}
 
-    [Key]
+    [KeyColumn("Chave primária, usada como identificador principal")]
     [Required]
     [JsonProperty]
     [DisplayName("ID")]
