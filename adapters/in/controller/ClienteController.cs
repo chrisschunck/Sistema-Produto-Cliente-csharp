@@ -28,7 +28,7 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPut("{id:long}")]
-    public IActionResult AtualizarClientePorId(long id, ClienteReponseDTO cliente)
+    public IActionResult AtualizarClientePorId([Validate], long id, ClienteReponseDTO cliente)
     {
         var clienteAtualizado = new Cliente
         {
