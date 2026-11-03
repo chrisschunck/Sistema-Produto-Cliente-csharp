@@ -13,7 +13,7 @@ public class ProdutoController : ControllerBase
 
     [HttpPost]
     [Authorize(Roles="admin")]
-    public ActionResult<Produto> AdicionarProduto([Validate], ProdutoRequestDTO produto)
+    public ActionResult<ProdutoResponseDTO> AdicionarProduto([Validate], ProdutoRequestDTO produto)
     {
         var novoProduto = new Produto
         {
@@ -28,7 +28,7 @@ public class ProdutoController : ControllerBase
     }
 
     [HttpPut("{id:long}")]
-    public IActionResult AtualizarProdutoPorId([Validate], long id, ProdutoRequestDTO produto)
+    public ProdutoResponseDTO AtualizarProdutoPorId([Validate], long id, ProdutoRequestDTO produto)
     {
         var produtoAtualizado = new Produto
         {
@@ -44,21 +44,21 @@ public class ProdutoController : ControllerBase
     }
 
     [HttpDelete("{id:long}")]
-    public IActionResult DeletarProdutoPorId(long id)
+    public void DeletarProdutoPorId(long id)
     {
         _produtoService.DeletarProdutoPorId(id);
         return NoContent();
     }
 
     [HttpGet("{id:long}")]
-    public ActionResult<Produto> ObterProdutoPorId(long id)
+    public ActionResult<ProdutoResponseDTO> ObterProdutoPorId(long id)
     {
         var produto = _produtoService.ObterProdutoPorId(id);
         return produto is null ? NotFound() : Ok(produto);
     }
 
     [HttpGet]
-    public ActionResult<IEnumerable<Produto>> ObterTodosProdutos()
+    public ActionResult<IEnumerable<ProdutoResponseDTO>> ObterTodosProdutos()
     {
         return Ok(_produtoService.ObterTodosProdutos());
     }
