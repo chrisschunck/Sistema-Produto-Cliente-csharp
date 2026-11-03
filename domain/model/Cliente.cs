@@ -34,24 +34,24 @@ public class Cliente {
     [JsonProperty]
     [DisplayName("ID")]
     public long id { get; set; } = 0;
-    [Required]
+    [Required(ErrorMessage = "Nome é obrigatório")]
     [JsonProperty]
     [DisplayName("Nome")]
     public string Nome { get; set; } = string.Empty;
-    [Required]
+    [Required(ErrorMessage = "Email é obrigatório")]
     [JsonProperty]
     [DisplayName("Email")]
     public string Email { get; set; } = string.Empty;
     [JsonProperty]
     [DisplayName("Telefone")]
-    [Required]
+    [Required(ErrorMessage = "Telefone é obrigatório")]
     public string Telefone { get; set; } = string.Empty;
     [JsonProperty]
     [DisplayName("Endereco")]
-    [Required]
+    [Required(ErrorMessage = "Endereço é obrigatório")]
     public string Endereco { get; set; } = string.Empty;
     [JsonProperty]
     [DisplayName("CPF")]
-    [Required]
+    [Required(ErrorMessage = "Cpf é obrigatório")]
     public string Cpf {get; set; } = string.Empty;
 }
