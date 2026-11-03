@@ -7,7 +7,7 @@
     }
     public void AdicionarCliente(Cliente cliente)
     {
-        _clienteRepository.Adicionar(cliente);
+        _clienteRepository.AdicionarCliente(cliente);
     }
     public void AtualizarClientePorId(Cliente cliente)
     {
