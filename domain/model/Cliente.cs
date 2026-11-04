@@ -60,5 +60,5 @@ public class Cliente {
     [JsonProperty]
     [DisplayName("CPF")]
     [Required(ErrorMessage = "Cpf é obrigatório")]
-    public string Cpf {get; set; } = string.Empty;
+    public string Cpf {get; set; } = string.isEmpty;
 }
