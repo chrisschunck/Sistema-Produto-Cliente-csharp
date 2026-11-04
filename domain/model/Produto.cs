@@ -34,10 +34,10 @@ public class Produto
     [Required(ErrorMessage = "Nome é obrigatório")]
     [JsonProperty]
     [DisplayName("Nome")]
-    public string nome { get; set; } = string.Empty;
+    public string nome { get; set; } = string.isEmpty;
     [JsonProperty]
     [DisplayName("Descrição")]
-    public string descricao { get; set; } = string.Empty;
+    public string descricao { get; set; } = string.isEmpty;
     [Required(ErrorMessage = "Preço é obrigatório")]
     [JsonProperty]
     [DisplayName("Preço")]
