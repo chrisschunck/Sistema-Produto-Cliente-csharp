@@ -27,7 +27,6 @@ public class Produto
     public Produto() { }
 
     [KeyColumn("Chave primária, usada como identificador principal")]
-    [Required(ErrorMessage = "Id é obrigatório")]
     [JsonProperty]
     [DisplayName("ID")]
     public long id { get; set; } = 0;
