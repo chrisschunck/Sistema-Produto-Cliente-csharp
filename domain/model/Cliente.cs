@@ -33,7 +33,6 @@ public class Cliente {
     public Cliente() {}
 
     [KeyColumn("Chave primária, usada como identificador principal")]
-    [Required]
     [JsonProperty]
     [DisplayName("ID")]
     public long id { get; set; } = 0;
